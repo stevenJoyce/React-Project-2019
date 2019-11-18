@@ -27,8 +27,6 @@ class App extends React.Component {
               <Nav.Link href="/Team">Team</Nav.Link>
               <Nav.Link href="/DriverChampionship">Driver Records</Nav.Link>
               <Nav.Link href="/TeamChampionship">Team Records</Nav.Link>
-              <Nav.Link href="/AddDriver">Add Driver</Nav.Link>
-              <Nav.Link href="/AddTeam">Add Team </Nav.Link>
             </Nav>
             
           </Navbar>

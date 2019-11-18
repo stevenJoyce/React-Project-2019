@@ -36,67 +36,68 @@ class AddDriver extends React.Component {
   handleSubmit(e) {
     alert("Driver Name: " + this.state.name + "\nFirst Season: " + this.state.firstSeason + 
         "\nLast Season: " + this.state.lastSeason + "\nF1 Record: " + this.state.f1Record + 
-        "\nPortrait URL: " + this.state.poster);
+        "\nPortrait URL: " + this.state.portrait);
     console.log("Driver Name: " + this.state.name + "\nFirst Season: " + this.state.firstSeason + 
     "\nLast Season: " + this.state.lastSeason + "\nF1 Record: " + this.state.f1Record + 
-    "\nPortrait URL: " + this.state.poster);
+    "\nPortrait URL: " + this.state.portrait);
     e.preventDefault();
   }
 
   render() {
     return (
-      <div>
-        <h3> Hello from the Create component</h3>
       
-      <form onSubmit={this.handleSubmit}>
-        <div className='name'>
-        <label>
-          Driver Name: 
-        </label>
-          <input type="text" 
-          value={this.state.name} 
-          onChange={this.handleChangeDriverName} />
-        </div>
-        <div className='first season'>
-        <label>
-          First Season:
-        </label>
-          <input type="text" 
-          value={this.state.firstSeason} 
-          onChange={this.handleChangeFirstSeason} />
-        </div>
-        <div className='last season'>
-        <label>
-          Last Season:
-        </label>
-          <input type="text" 
-          value={this.state.lastSeason} 
-          onChange={this.handleChangeLastSeason} />
-        </div>
-        <div className='f1 record'>
-        <label>
-          F1 Record(Races - Wins):
-        </label>
-          <input type="text" 
-          value={this.state.f1Record} 
-          onChange={this.handleChangeF1Record} />
-        </div>
-        <div className='portrait URL'>
-        <label>
-          Portrait URL:
-         </label> 
-         <textarea
-          rows='3'
-          className='form-control'
-          value={this.state.portrait} 
-          onChange={this.handleChangePotrait} />
-        </div>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <h1> Add F1 Driver Form</h1>
+        <form onSubmit={this.handleSubmit}>
+          <div className='name'>
+          <label>
+            Driver Name: 
+          </label>
+            <input type="text" 
+            value={this.state.name} 
+            onChange={this.handleChangeDriverName} />
+          </div>
+          <div className='first season'>
+          <label>
+            First Season:
+          </label>
+            <input type="text" 
+            value={this.state.firstSeason} 
+            onChange={this.handleChangeFirstSeason} />
+          </div>
+          <div className='last season'>
+          <label>
+            Last Season:
+          </label>
+            <input type="text" 
+            value={this.state.lastSeason} 
+            onChange={this.handleChangeLastSeason} />
+          </div>
+          <div className='f1 record'>
+          <label>
+            F1 Record(Races - Wins):
+          </label>
+            <input type="text" 
+            value={this.state.f1Record} 
+            onChange={this.handleChangeF1Record} />
+          </div>
+          <div className='portrait URL'>
+          <label>
+            Portrait URL:
+          </label> 
+          <textarea
+            rows='3'
+            className='form-control'
+            value={this.state.portrait} 
+            onChange={this.handleChangePortrait} 
+            ></textarea>
+          </div>
+          <input type="submit" value="Add Driver" />
+        </form>
       </div>
     );
-  }
+  }//render
   
-}
+}//class
 
 export default AddDriver;

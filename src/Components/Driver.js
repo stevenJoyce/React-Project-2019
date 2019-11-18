@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Driver extends React.Component {
   //To turn function to class add class name and extend app to include React.Component
@@ -6,7 +7,12 @@ class Driver extends React.Component {
   render(){
     return (
       <div className="App">
-        <h1> My Driver in another component</h1>
+        <p>
+          <br />
+          <br />
+          If you wish to add a new Driver to the database click here
+          <Link to={"/addDriver/"} className="Btn_btn-primary"> Add a driver </Link>
+        </p>
       </div>
     );
   }

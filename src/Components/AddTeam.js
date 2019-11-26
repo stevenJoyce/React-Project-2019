@@ -1,13 +1,13 @@
 import React from 'react';
-
+import axios from 'axios';
 class AddTeam extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {name: '',
-                  firstSeason: '',
-                  lastSeason: '',
-                  f1Record:'',
-                  logo:''};
+    this.state = {teamName: '',
+                  teamFirstSeason: '',
+                  teamLastSeason: '',
+                  teamF1Record:'',
+                  teamLogo:''};
     
     this.handleChangeTeamName = this.handleChangeTeamName.bind(this);
     this.handleChangeFirstSeason = this.handleChangeFirstSeason.bind(this);
@@ -18,29 +18,49 @@ class AddTeam extends React.Component {
   }
   
   handleChangeTeamName(e){
-      this.setState({name: e.target.value});
+      this.setState({teamName: e.target.value});
   }
   handleChangeFirstSeason(e) {
-    this.setState({firstSeason: e.target.value});
+    this.setState({teamFirstSeason: e.target.value});
   }
   handleChangeLastSeason(e) {
-    this.setState({lastSeason: e.target.value});
+    this.setState({teamLastSeason: e.target.value});
   }
   handleChangeF1Record(e){
-    this.setState({f1Record: e.target.value});
+    this.setState({teamF1Record: e.target.value});
   }
   handleChangeLogo(e){
-    this.setState({logo: e.target.value});
+    this.setState({teamLogo: e.target.value});
   }
 
   handleSubmit(e) {
-    alert("Team Name: " + this.state.name + "\nFirst Season: " + this.state.firstSeason + 
-        "\nLast Season: " + this.state.lastSeason + "\nF1 Record: " + this.state.f1Record + 
-        "\nTeam Logo URL: " + this.state.logo);
-    console.log("Driver Name: " + this.state.name + "\nFirst Season: " + this.state.firstSeason + 
-    "\nLast Season: " + this.state.lastSeason + "\nF1 Record: " + this.state.f1Record + 
-    "\nTeam Logo URL: " + this.state.logo);
+    alert("Team Name: " + this.state.teamName + "\nFirst Season: " + this.state.teamFirstSeason + 
+        "\nLast Season: " + this.state.teamLastSeason + "\nF1 Record: " + this.state.teamF1Record + 
+        "\nTeam Logo URL: " + this.state.teamLogo);
+
+    console.log("Driver Name: " + this.state.teamName + "\nFirst Season: " + this.state.teamFirstSeason + 
+    "\nLast Season: " + this.state.teamLastSeason + "\nF1 Record: " + this.state.teamF1Record + 
+    "\nTeam Logo URL: " + this.state.teamLogo);
     e.preventDefault();
+
+    const newTeam = {
+        teamName:this.state.teamName,
+        teamFirstSeason: this.state.teamFirstSeason,
+        teamLastSeason: this.state.teamLastSeason,
+        teamF1Record: this.state.teamF1Record,
+        teamLogo: this.state.teamLogo
+    }
+
+    axios.post('http://localhost:4000/api/team',newTeam)
+    .then()
+    .catch();
+
+    this.setState({teamName:'',
+            teamFirstSeason:'',
+            teamLastSeason:'',
+            teamF1Record:'',
+            teanLogo:''
+    })
   }
 
   render() {
@@ -54,7 +74,7 @@ class AddTeam extends React.Component {
             Team Name: 
           </label>
             <input type="text" 
-            value={this.state.name} 
+            value={this.state.teamName} 
             onChange={this.handleChangeTeamName} />
           </div>
           <div className='first season'>
@@ -62,7 +82,7 @@ class AddTeam extends React.Component {
             First Season:
           </label>
             <input type="text" 
-            value={this.state.firstSeason} 
+            value={this.state.teamFirstSeason} 
             onChange={this.handleChangeFirstSeason} />
           </div>
           <div className='last season'>
@@ -70,7 +90,7 @@ class AddTeam extends React.Component {
             Last Season:
           </label>
             <input type="text" 
-            value={this.state.lastSeason} 
+            value={this.state.teamLastSeason} 
             onChange={this.handleChangeLastSeason} />
           </div>
           <div className='f1 record'>
@@ -78,7 +98,7 @@ class AddTeam extends React.Component {
             F1 Record(Championships - Wins):
           </label>
             <input type="text" 
-            value={this.state.f1Record} 
+            value={this.state.teamF1Record} 
             onChange={this.handleChangeF1Record} />
           </div>
           <div className='Team Logo'>
@@ -88,7 +108,7 @@ class AddTeam extends React.Component {
           <textarea
             rows='3'
             className='form-control'
-            value={this.state.logo} 
+            value={this.state.teamLogo} 
             onChange={this.handleChangeLogo}>
             </textarea>      
           </div>

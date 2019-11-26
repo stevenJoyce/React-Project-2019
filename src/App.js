@@ -5,8 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import{ Switch, Route, BrowserRouter } from 'react-router-dom';
 import Content from './Components/Content';
-import Driver from './Components/Driver';
-import Team from './Components/Teams';
+import Drivers from './Components/Drivers';
+import Teams from './Components/Teams';
 import TeamRecord from './Components/TeamChampionship';
 import DriverRecord from './Components/DriverChampionship';
 import AddDriver from './Components/AddDriver';
@@ -23,17 +23,19 @@ class App extends React.Component {
           <Navbar bg="dark" variant="dark">
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/Driver">Driver</Nav.Link>
-              <Nav.Link href="/Team">Team</Nav.Link>
+              <Nav.Link href="/Drivers">Drivers</Nav.Link>
+              <Nav.Link href="/Teams">Teams</Nav.Link>
               <Nav.Link href="/DriverChampionship">Driver Records</Nav.Link>
               <Nav.Link href="/TeamChampionship">Team Records</Nav.Link>
+              <Nav.Link href="/AddDriver">Add a Driver</Nav.Link>
+              <Nav.Link href="/addTeam">Add a Team</Nav.Link>
             </Nav>
             
           </Navbar>
             <Switch>
               <Route exact path="/" component={Content}/>
-              <Route path="/Driver" component={Driver}/>
-              <Route path="/Team" component={Team}/>
+              <Route path="/Drivers" component={Drivers}/>
+              <Route path="/Teams" component={Teams}/>
               <Route path="/DriverChampionship" component={DriverRecord}/>
               <Route path="/TeamChampionship" component={TeamRecord}/>
               <Route path="/AddTeam" component={AddTeam}/>

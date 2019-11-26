@@ -1,34 +1,34 @@
 import React from 'react';
-import Team from './TeamData';
+import Driver from './DriverData';
 import axios from 'axios';
 
-class Teams extends React.Component {
+class Drivers extends React.Component {
   state={
-    team:[ ]
+    driver:[ ]
   };
 
   componentDidMount() {
-    axios.get('http://localhost:4000/api/team')
+    axios.get('http://localhost:4000/api/driver')
     .then((response)=>{
-      this.setState({team:response.data.team});
+      this.setState({driver:response.data.driver});
     })
     .catch((error)=>{
       console.log(error);
     })
   
   }
-
   //To turn function to class add class name and extend app to include React.Component
+  //Put the return in a render
   render(){
     return (
       <div className="App">
         <p>
-          <Team myTeams={this.state.team}></Team>
+          <Driver myDrivers={this.state.driver}></Driver>
         </p>
       </div>
     );
   }
+  
 }
 
-export default Teams;
-  
+export default Drivers;

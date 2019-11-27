@@ -1,6 +1,7 @@
 import React from 'react';
 import Driver from './DriverData';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Drivers extends React.Component {
   state={
@@ -25,6 +26,10 @@ class Drivers extends React.Component {
         <p>
           <Driver myDrivers={this.state.driver}></Driver>
         </p>
+        <p>
+        <Link to={"/AddDriver"} className="Btn_btn-primary"> Add Driver </Link>
+        </p>
+
       </div>
     );
   }

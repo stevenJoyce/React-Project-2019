@@ -1,6 +1,7 @@
 import React from 'react';
 import Team from './TeamData';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Teams extends React.Component {
   state={
@@ -24,6 +25,9 @@ class Teams extends React.Component {
       <div className="App">
         <p>
           <Team myTeams={this.state.team}></Team>
+        </p>
+        <p>
+          <Link to={"/AddTeam"} className="Btn_btn-primary"> Add Teams </Link>
         </p>
       </div>
     );

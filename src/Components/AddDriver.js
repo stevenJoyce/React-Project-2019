@@ -14,7 +14,7 @@ class AddDriver extends React.Component {
     this.handleChangeFirstSeason = this.handleChangeFirstSeason.bind(this);
     this.handleChangeLastSeason = this.handleChangeLastSeason.bind(this);
     this.handleChangeF1Record = this.handleChangeF1Record.bind(this);
-    this.handleChangePicture = this.handleChangePicture .bind(this);
+    this.handleChangePicture = this.handleChangePicture.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   

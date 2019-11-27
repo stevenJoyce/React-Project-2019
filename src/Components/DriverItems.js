@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-
+import {Link} from 'react-router-dom';
 class DriverItem extends React.Component {
     render(){
         return(
@@ -14,8 +14,10 @@ class DriverItem extends React.Component {
                             F1 Record: {this.props.driver.driverF1Record}</p> 
                     </blockquote>
                 </Card.Body>
+                <Link to={"/EditDriver/"+ this.props.driver._id} className="Btn_btn-primary"> Edit </Link>
             </Card>
-        )
+            
+        );
     }
 }
 

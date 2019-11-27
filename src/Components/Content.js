@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../images/f1Logo.jpg';
-import Farina from '../images/Farina.jpg'
+import Farina from '../images/Farina.jpg';
 class Content extends React.Component {
   //To turn function to class add class name and extend app to include React.Component
   //Put the return in a render

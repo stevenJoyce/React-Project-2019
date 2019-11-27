@@ -68,6 +68,26 @@ app.get('/api/team', (req, res) =>{
     })
 
 })
+//Get data and edit the stored data
+app.get('/api/driver/:id', (req, res)=>{
+    console.log(req.params.id);
+
+    DriverModel.findById(req.params.id, (error,data)=>{
+        res.json(data);
+    })
+})
+
+app.put('/api/driver/:id',(req, res) =>{
+    console.log("Edit: " + req.params.id);
+    console.log(req.body);
+
+    MovieModel.findByIdAndUpdate(req.params.id, 
+        req.body, 
+        {new:true},
+        (error,data)=>{
+            res.json(data);
+        })
+})
 //POST to send name, year and url of poster 
 //Use MovieModel to send data to database and create a collection to store that data
 app.post('/api/driver',(req,res)=>{

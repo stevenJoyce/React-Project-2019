@@ -11,6 +11,8 @@ import TeamRecord from './Components/TeamChampionship';
 import DriverRecord from './Components/DriverChampionship';
 import AddDriver from './Components/AddDriver';
 import AddTeam from './Components/AddTeam';
+import EditDriver from './Components/EditDriver';
+import EditTeam from './Components/EditTeam';
 
 class App extends React.Component {
   
@@ -38,6 +40,8 @@ class App extends React.Component {
               <Route path="/TeamChampionship" component={TeamRecord}/>
               <Route path="/AddTeam" component={AddTeam}/>
               <Route path="/AddDriver" component={AddDriver}/>
+              <Route path="/EditDriver/:id" component={EditDriver}/>
+              <Route path="/EditTeam/:id" component={EditTeam}/>
             </Switch>
         </div>
     </BrowserRouter>

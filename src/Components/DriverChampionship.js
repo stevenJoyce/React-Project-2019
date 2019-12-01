@@ -5,6 +5,7 @@ class DriverChampionship extends React.Component {
   //To turn function to class add class name and extend app to include React.Component
   //Put the return in a render  
   render() {  
+    //Inside  array called data I will put all the info for each column
      const data = [
        {  
         name: 'Michael Schumacher',
@@ -270,7 +271,8 @@ class DriverChampionship extends React.Component {
         wins: 15,
         noOfSeasons: 18
       }
-    ]  
+    ] 
+    //Inside an array called columns I will put the column headers 
      const columns = [
        {  
           Header: 'Name',  
@@ -294,6 +296,7 @@ class DriverChampionship extends React.Component {
       }
       ]  
     return (  
+      //using the reactTable library imported I will show the table on this page 
           <div>  
             <h1> All-Time F1 World Champions </h1>
               <ReactTable  

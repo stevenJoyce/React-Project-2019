@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactTable from "react-table";  
-import "react-table/react-table.css"; //A preset react css file 
+import "react-table/react-table.css"; //A preset react css file for react-table 
 class TeamChampionship extends React.Component {
   //To turn function to class add class name and extend app to include React.Component
   //Put the return in a render
   render() {  
+    //Inside  array called data I will put all the info for each column
     const data = [
       {  
        name: 'Ferrari',
@@ -158,6 +159,7 @@ class TeamChampionship extends React.Component {
       noOfSeasons: 7
     },
    ]  
+   //Inside an array called columns I will put the column headers
     const columns = [
       {  
          Header: 'Team Name',  
@@ -193,7 +195,7 @@ class TeamChampionship extends React.Component {
      {
         Header: 'Pole Position',
         accessor: 'poles',
-        width: 100
+        width: 140
      },
      {  
        Header: 'Number of Seasons',  
@@ -201,9 +203,11 @@ class TeamChampionship extends React.Component {
        width:150
      }
      ]  
-   return (  
+   return (
+     //using the reactTable library imported I will show the table on this page  
          <div>  
            <h1> All- Time F1 Constructor Champions </h1>
+           
              <ReactTable  
                  data={data}  
                  columns={columns}  />  
